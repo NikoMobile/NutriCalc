@@ -33,7 +33,7 @@ const props = defineProps({
     width: 100%;
     margin: 0;
     padding: 0;
-    padding-left: 50%;
+    text-align: center;
     border: 0;
     border-bottom: 2px solid grey;
     font-size: 1.2rem;
