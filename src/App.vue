@@ -1,7 +1,7 @@
 <script setup>
+import {computed, ref} from "vue";
 
 import NumberInput from "@/components/NumberInput.vue";
-import {computed, ref} from "vue";
 import TextInput from "@/components/TextInput.vue";
 import SelectInput from "@/components/SelectInput.vue";
 
@@ -34,10 +34,10 @@ const typeMorphologie = [
 
 
 const nom = ref("")
-const age = ref(41)
+const age = ref(0)
 const sexe = ref(sexes[0])
-const taille = ref(195)
-const poids = ref(103)
+const taille = ref(0)
+const poids = ref(0)
 const activite = ref(niveauxActivite[2])
 const morpho = ref(typeMorphologie[1])
 
@@ -109,9 +109,6 @@ const show_results = computed(() => Boolean(age.value) && Boolean(taille.value) 
       <span>Métabolisme total</span>
       <span>{{ metabolisme_total }} kcal/jour</span>
     </div>
-    <div class="result-row"></div>
-    <div class="result-row"></div>
-
   </div>
 </template>
 
