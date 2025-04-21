@@ -14,13 +14,17 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="form-element">
+  <div class="form-element input_group">
     <multiselect :allow-empty="false" :options="choices" v-model="model" label="value" track-by="id"
                  :placeholder="titre"/>
   </div>
 </template>
 <style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
 
-<style scoped>
-
+<style scoped lang="scss">
+.input_group {
+  position: relative;
+  margin: 25px auto 10px;
+  width: 90%;
+}
 </style>
