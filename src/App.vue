@@ -4,6 +4,7 @@ import {computed, ref} from "vue";
 import NumberInput from "@/components/NumberInput.vue";
 import TextInput from "@/components/TextInput.vue";
 import SelectInput from "@/components/SelectInput.vue";
+import SvgLogo from "@/assets/logo.svg?component";
 
 const sexes = [
   {
@@ -58,18 +59,19 @@ const show_results = computed(() => Boolean(age.value) && Boolean(taille.value) 
 </script>
 
 <template>
-  <h1>Nutricalc</h1>
-  <h2>Valeurs : </h2>
+  <SvgLogo width="100" height="100"/>
+  <h1>NutriCalc</h1>
+  <h2>ANALYSE TECHNIQUE</h2>
   <div class="entree">
     <text-input v-model="nom" titre="Nom"/>
     <select-input v-model="sexe" :choices="sexes" titre="Sexe"/>
-    <number-input v-model="age" titre="Âge" min="0" max="130"/>
-    <number-input v-model="taille" titre="Taille (cm)" min="0" max="250"/>
-    <number-input v-model="poids" titre="Poids (kg)" min="0" max="300"/>
+    <number-input v-model="age" titre="Âge" :min="0" :max="130"/>
+    <number-input v-model="taille" titre="Taille (cm)" :min="0" :max="250"/>
+    <number-input v-model="poids" titre="Poids (kg)" :min="0" :max="300"/>
     <select-input v-model="activite" :choices="niveauxActivite" titre="Activité"/>
     <select-input v-model="morpho" :choices="typeMorphologie" titre="Type Morphologie"/>
   </div>
-  <h2>Résultats</h2>
+  <h2>RESULTATS</h2>
   <div class="resultats" v-if="show_results">
     <div class="result-row imc">
       <span>IMC</span><span>{{ IMC.toFixed(2) }}</span>
@@ -114,10 +116,23 @@ const show_results = computed(() => Boolean(age.value) && Boolean(taille.value) 
 
 
 <style scoped lang="scss">
+.entree {
+  background-color: #699f8e;
+  margin: 0 1em;
+  padding: 1em;
+  border-radius: 10px;
+
+}
+
 .resultats {
   display: flex;
   flex-direction: column;
   gap: 5px;
+  margin: 0 1em;
+  padding: 1em;
+  border-radius: 10px;
+  color: #fffdf8;
+  background-color: #9c5c83;
 
   .result-row {
     display: flex;

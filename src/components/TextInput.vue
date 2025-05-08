@@ -1,5 +1,5 @@
 <script setup>
-const model = defineModel({type: Number})
+const model = defineModel({type: String})
 const props = defineProps({
   titre: {type: String, default: 'Valeur'},
 
@@ -10,34 +10,33 @@ const props = defineProps({
 
 <template>
   <div class="form-element input_group">
-    <input class="input_field" v-model="model" type="text">
     <label class="input_label">{{ titre }}</label>
+    <input class="input_field" v-model="model" type="text">
+
   </div>
 </template>
 
 <style scoped lang="scss">
 .input_group {
-  position: relative;
-  margin: 25px auto 10px;
-  width: 90%;
+  display: flex;
+  flex-direction: column;
 
   .input_label {
-    position: absolute;
-    top: 0;
-    left: 0;
-    color: black;
-    transition: .5s;
-    font-size: .8em;
+    color: white;
+    padding-left: 16px;
+    text-align: left;
   }
 
   .input_field {
     width: 100%;
+    height: 32px;
     margin: 0;
-    padding: 0;
-    border: 0;
-    border-bottom: 2px solid grey;
+    padding: 0 20px;
+
+    border: 2px solid grey;
+    border-radius: 16px;
     font-size: 1.2rem;
-    background: transparent;
+    background-color: #cae5d4 !important;
     outline: none;
   }
 
