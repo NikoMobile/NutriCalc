@@ -97,19 +97,19 @@ const show_results = computed(() => Boolean(age.value) && Boolean(taille.value) 
     </div>
     <div class="result-row">
       <span>Poids Santé (Lorentz)</span>
-      <span>{{ poids_sante_lorentz }} kg</span>
+      <span>{{ poids_sante_lorentz.toFixed(1) }} kg</span>
     </div>
     <div class="result-row">
       <span>Poids Santé (Corrigé)</span>
-      <span>{{ poids_sante }} kg</span>
+      <span>{{ poids_sante.toFixed(1) }} kg</span>
     </div>
     <div class="result-row">
       <span>Métabolisme Base</span>
-      <span>{{ metabolisme_base }} kcal/jour</span>
+      <span>{{ metabolisme_base.toFixed() }} kcal/jour</span>
     </div>
     <div class="result-row">
       <span>Métabolisme total</span>
-      <span>{{ metabolisme_total }} kcal/jour</span>
+      <span>{{ metabolisme_total.toFixed() }} kcal/jour</span>
     </div>
   </div>
 </template>
